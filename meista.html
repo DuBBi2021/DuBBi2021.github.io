@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Petanque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+   <div class="navbar">
+    <h1 class="otsikko">
+        pe<span class="delay1">t</span>anqu
+        <span class="delay2">e</span>
+    </h1>
+        <ul class="links">
+            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="meista.html">Meistä</a></li>
+            <li><a href="galleria.html">Galleria</a></li>
+        </ul> 
+        <a href="contact.html" class="action_btn">Ota yhteyttä</a>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div class="meista_otsikko">
+        <h1>Tässä voisi olla tietoja vähän meidän petankki saavutuksista ja kertoa historiasta</h1>
+    </div>
+    <div class="meista">
+        <h2>Tässä näkyy meidän google mapsin kautta hallin sijainti</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1065.0572829001555!2d22.267348447973937!3d63.24630130140482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46879b5b409afc6f%3A0x7a61cdb205ad5ccb!2s66710%20V%C3%B6yri!5e1!3m2!1sfi!2sfi!4v1715505724129!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <br>
+    </div>
+    <div class="meista2">
+        <h2>Tässä näkyy meidän ulkokenttä, jossa kesäisin pelaamme</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m11!1m3!1d2128.792940328683!2d22.40549512559735!3d63.31407262783546!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sfi!2sfi!4v1715505935895!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div>
+    </div>
+
+    <ul class="dropdown_menu">
+        <li><a href="index.html">Etusivu</a></li>
+        <li><a href="meista.html">Meistä</a></li>
+        <li><a href="galleria.html">Galleria</a></li>
+        <li><a href="contact.html" class="action_btn">Ota yhteyttä</a></li>
+    </ul>
+    </header>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ?'fa-solid fa-xmark'
+                :'fa-solid fa-bars'
+        }
+    </script>
+</body>
+</html>

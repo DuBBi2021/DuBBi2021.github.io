@@ -1,0 +1,433 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg,#000000,#120288,#62726f, #23d5ab);
+    background-size: 300%;
+    animation: color 12s ease-in-out infinite;
+    box-sizing: border-box;
+    background-attachment: fixed;
+}
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+a:hover{
+    color:orange;
+}
+header {
+    position: relative;
+    padding: 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: #120288;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.action_btn:hover{
+    color:white
+}
+
+
+.dropdown_menu{
+    position: absolute;
+    right:2rem;
+    top:80px;
+    height: 0;
+    width: 300px;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+@media(max-width:992px){
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+}
+
+
+@media(max-width:576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+.dropdown_menu.open{
+    height: 200px;
+} 
+
+.contact{
+    width: 100%;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+
+}
+
+form{
+    width: 90%;
+    max-width: 600px;
+
+}
+
+.otayhteytta{
+    margin-bottom: 30px;
+    position: relative;
+
+}
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid white;
+    color:white;
+    background: transparent;
+    font-size: 15px;
+}
+
+label{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color:white;
+    cursor:text;
+    transition: 0.2s;
+
+}
+
+button{
+    padding: 10px;
+    color: white;
+    outline: none;
+    background: transparent;
+    border: 1px solid white;
+    width: 100%;
+    cursor: pointer;
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label{
+    top: -35px;
+    font-size: 14px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row .otayhteytta{
+    flex-basis: 48%;
+}
+
+.otsikko{
+    line-height: 100px;
+    font-size: 20px;
+    display:flex;
+    justify-content: center;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:white;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #fff,
+        0 0 80px #fff,
+        0 0 90px #fff,
+        0 0 100px #fff,
+        0 0 150px #fff;
+}
+
+.otsikko span {
+    animation: flicker 5200ms infinite;
+}
+.otsikko .delay1 {
+    animation-delay: 1.5s;
+}
+
+.otsikko.delay2 {
+    animation-delay: 0.8s;
+}
+
+
+
+@keyframes flicker {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    20% {opacity: 0;}
+    40% {opacity: 1;}
+    50% {opacity: 0;}
+    60% {opacity: 1;}
+    80% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.kuvaotsikko{
+   text-align: center;
+    font-size: 60px;
+    color:white;
+}
+.kuva{
+    overflow: hidden;
+    height: 600px;
+    width: 1200px;
+    margin-left: auto;
+    margin-top: 20px
+}
+
+@-webkit-keyframes slide_animation{
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:1200px;}
+    30% {left:1200px;}
+    40% {left:2400px;}
+    50% {left:2400px;}
+    60% {left:1200px;}
+    70% {left:1200px;}
+    80% {left:0px;}
+    90% {left:0px;}
+    100% {left:0px;}
+}
+
+.kuvat{
+    width: 3600px;
+    height: 800px;
+    margin: 0 0 0 -2300px;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+}
+.kuvien_sisältö{
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float: left;
+}
+img{
+    width: 70%;
+    height: 100%;
+}
+
+.etusivu_otsikko{
+    text-align: center;
+    margin-top: 70px;
+    color:white;
+}
+.pee{
+    color:white;
+    font-size: 20px;
+    text-align: center;
+}
+.yhteys_otsikko{
+    color:white;
+    font-size: 50px;
+    text-align: center;
+}
+.video{
+    text-align: center;
+    color: white;
+    
+}
+.meista_otsikko{
+    text-align: center;
+    color: white;
+}
+.meista{
+    color:white;
+    padding: 15px;
+    margin: auto;
+    float: left;
+    
+}
+.meista2{
+    color: white;
+    padding: 15px;
+    margin: auto;
+    float:initial;
+}
+.social{
+    display:flex;
+    text-align: center;
+    justify-content:center;
+    margin-top: 16rem;
+
+}
+ 
+.social .icon{
+    margin: 0 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction:column;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.68, -0.55,0.265,1.55);
+}
+.social .icon span{
+    height: 30px;
+    width: 30px;
+    display: block;
+    position: relative;
+    background: black;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.social .icon span i{
+    font-size: 20px;
+    line-height: 30px;
+}
+.social .icon:hover  span {
+    color:#fff;
+}
+.social .icon .tooltip{
+    background: #fff;
+    position: relative;
+    top: 0px;
+    color:#fff;
+    font-size: 15px;
+    padding: 5px 9px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55,0.265,1.55);
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.social .icon:hover .tooltip{
+    top: -20px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.social .icon .tooltip:before{
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+.social .icon:hover span,
+.social .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgb(0,0,0,0.4);
+
+}
+.social .facebook:hover span,
+.social .facebook:hover .tooltip,
+.social .facebook:hover .tooltip:before{
+    background: #3B5999;
+}
+.social .linkedin:hover span,
+.social .linkedin:hover .tooltip,
+.social .linkedin:hover .tooltip:before{
+    background: #46C1F6;
+}
+.social .instagram:hover span,
+.social .instagram:hover .tooltip,
+.social .instagram:hover .tooltip:before{
+    background: #e1306c;
+}
+.social .github:hover span,
+.social .github:hover .tooltip,
+.social .github:hover .tooltip:before{
+    background: #333;
+}
+.social .youtube:hover span,
+.social .youtube:hover .tooltip,
+.social .youtube:hover .tooltip:before{
+    background: #CD201F;
+}
+.validation{
+    text-align: center;
+}

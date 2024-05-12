@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Petanque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+   <div class="navbar">
+    <h1 class="otsikko">
+        pe<span class="delay1">t</span>anqu
+        <span class="delay2">e</span>
+    </h1>
+        <ul class="links">
+            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="meista.html">Meistä</a></li>
+            <li><a href="galleria.html">Galleria</a></li>
+        </ul> 
+        <a href="contact.html" class="action_btn">Ota yhteyttä</a>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <hr>
+
+    <ul class="dropdown_menu">
+        <li><a href="index.html">Etusivu</a></li>
+        <li><a href="meista.html">Meistä</a></li>
+        <li><a href="galleria.html">Galleria</a></li>
+        <li><a href="contact.html" class="action_btn">Ota yhteyttä</a></li>
+    </ul>
+    </header>
+    <h1 class="yhteys_otsikko">Ota rohkeasti yhteyttä! <i class="fa-regular fa-envelope"></i></h1>
+<div class="contact">
+    <form action="https://api.web3forms.com/submit" method="POST">
+        
+    <div class="row">
+        <div class="otayhteytta">
+            <input type="text" name="name" required>
+            <label for="name"><i class="fa-solid fa-user">&nbsp;</i><strong>Nimesi</strong></label>
+        </div>
+        <div class="otayhteytta">
+            <input type="text" name="phone" required>
+            <label for="phone"><i class="fa-solid fa-phone-square-alt">&nbsp;</i><strong>Numerosi</strong></label>
+        </div>
+    </div>
+    
+    <div class="otayhteytta">
+        <input type="email" name="email" required>
+        <label for="email"><i class="fa-solid fa-envelope">&nbsp;</i><strong>Sähköposti</strong></label>
+    </div>
+    <div class="otayhteytta">
+        <textarea name="message" rows="8" required></textarea>
+        <label for="message"><i class="fa-solid fa-comments">&nbsp;</i><strong>Tähän viesti</strong></label>
+    </div>
+    <button type="submit"><strong>Lähetä</strong>&nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+    <input type="hidden" name="access_key" value="d2b049f4-5693-4563-bd5a-0ee116c7a6d1">
+</form>
+</div>
+  
+   <script>
+    const toggleBtn = document.querySelector(".toggle_btn")
+    const toggleBtnIcon = document.querySelector(".toggle_btn i")
+    const dropDownMenu = document.querySelector(".dropdown_menu")
+
+    toggleBtn.onclick = function() {
+        dropDownMenu.classList.toggle("open")
+        const isOpen = dropDownMenu.classList.contains("open")
+
+        toggleBtnIcon.classList = isOpen
+        ? "fa-solid fa-xmark"
+        : "fa-solid fa-bars"
+    }
+   </script>
+
+</body>
+</html>
